@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>{{ pick.title }} 상품 페이지</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/item-page.css' %}" rel="stylesheet">
+
+
+  <!-- Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/ps-icon/style.css' %}">
+    <!-- CSS Library-->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/owl-carousel/assets/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-select/dist/css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/Magnific-Popup/dist/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-ui/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/revolution/css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/revolution/css/layers.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/revolution/css/navigation.css' %}">
+    <!-- Custom-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!--WARNING: Respond.js doesn't work if you view the page via file://-->
+    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+ </head>
+
+<body>
+ <!--[if IE 7]><body class="ie7 lt-ie8 lt-ie9 lt-ie10"><![endif]-->
+  <!--[if IE 8]><body class="ie8 lt-ie9 lt-ie10"><![endif]-->
+  <!--[if IE 9]><body class="ie9 lt-ie10"><![endif]-->
+  
+  
+  
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Django Shop</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Content -->
+  
+  <form action=/item/buy/success>
+    <input type="hidden" name="product" value={{ pick.title }}/>
+    <input type="hidden" name="among" value={{ among }}/>
+  <main class="ps-main">
+      <div class="ps-checkout pt-80 pb-80">
+        <div class="ps-container">
+          <form class="ps-checkout__form" action="do_action" method="post">
+            <div class="row">
+                  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
+                    <div class="ps-checkout__billing">
+                      <h3>Billing Detail</h3>
+                            <div class="form-group form-group--inline">
+                              <label>First Name<span>*</span>
+                              </label>
+                              <input class="form-control" type="text" name="f_name">
+                            </div>
+                            <div class="form-group form-group--inline">
+                              <label>Last Name<span>*</span>
+                              </label>
+                              <input class="form-control" type="text" name="l_name">
+                            </div>
+                            
+                            <div class="form-group form-group--inline">
+                              <label>Email Address<span>*</span>
+                              </label>
+                              <input class="form-control" type="email" name="email">
+                            </div>
+                            
+                            <div class="form-group form-group--inline">
+                              <label>Phone<span>*</span>
+                              </label>
+                              <input class="form-control" type="text" name="phone">
+                            </div>
+                            <div class="form-group form-group--inline">
+                              <label>Address<span>*</span>
+                              </label>
+                              <input class="form-control" type="text" name="address">
+                            </div>
+                      
+                      <h3 class="mt-40"> Addition information</h3>
+                      <div class="form-group form-group--inline textarea">
+                        <label>Order Notes</label>
+                        <textarea class="form-control" rows="5" placeholder="Notes about your order, e.g. special notes for delivery." name="comment"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                    <div class="ps-checkout__order">
+                      <header>
+                        <h3>Your Order</h3>
+                      </header>
+                      <div class="content">
+                        <table class="table ps-checkout__products">
+                          <thead>
+                            <tr>
+                              <th class="text-uppercase">Product</th>
+                              <th class="text-uppercase">Total</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>{{ pick.title }} x{{ among }}</td>
+                              <td>${{ pick.price }} x{{ among }}</td>
+                            </tr>
+                            
+                            <tr>
+                              <td>Order Total</td>
+                              <td>${{result}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <footer>
+                        <h3>Payment Method</h3>
+                        <div class="form-group cheque">
+                          <div class="ps-radio">
+                            <input class="form-control" type="radio" id="rdo01" name="payment" checked>
+                            <label for="rdo01">Cheque Payment</label>
+                            <p>Please, let me know if you have any questions.</p>
+                          </div>
+                        </div>
+                        <div class="form-group paypal">
+                          <input type="submit" class="ps-btn ps-btn--fullwidth" value="Place Order"/><i class="ps-icon-next"></i>
+                        </div>
+                      </footer>
+                    </div>
+                    
+                  </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </main>
+	</form>
+  
+  
+  
+  
+  <!-- Page Content -->
+
+
+</div>
+<!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<!-- JS Library-->
+    <script type="text/javascript" src="{% static 'plugins/jquery/dist/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/jquery-bar-rating/dist/jquery.barrating.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/gmap3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/imagesloaded.pkgd.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/isotope.pkgd.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/jquery.matchHeight-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/slick/slick/slick.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/elevatezoom/jquery.elevatezoom.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx39JFH5nhxze1ZydH-Kl8xXM3OK4fvcg&amp;region=GB"></script>
+	<script type="text/javascript" src="{% static 'plugins/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+    <!-- Custom scripts-->
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
